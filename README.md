@@ -205,33 +205,77 @@ Create new text or chat prompts directly in Langfuse.
 
 ### Example 1: Get a Production Prompt
 
-_Example workflow that retrieves the system prompt for the agent from Langfuse:_
+Retrieve a specific prompt version from Langfuse Prompt Management:
 
-![n8n-changelog](https://github.com/user-attachments/assets/4d224c2f-86b6-4ad4-a64a-45c7fe6e3595)
+```json
+{
+  "operation": "get",
+  "promptName": "customer-service-agent",
+  "label": "production"
+}
+```
+
+This operation returns the prompt content, which can be used directly in your AI workflows.
+
+![Enhanced Langfuse Node](assets/new_n8n_langfuse_node.png)
 
 ### Example 2: Filter Prompts by Tag and Label
+
+List prompts with advanced filtering to find exactly what you need:
 
 ```json
 {
   "operation": "list",
-  "tagFilter": "production",
-  "labelFilter": "stable",
+  "tagFilter": "customer-support",
+  "labelFilter": "production",
   "limit": 20,
   "page": 1
 }
 ```
 
-### Example 3: Create a New Version of an Existing Prompt
+This returns a paginated list of prompts matching your criteria, including metadata like versions, tags, and labels.
+
+### Example 3: Create a New Chat Prompt
+
+Create a new chat-style prompt for your AI agent:
 
 ```json
 {
   "operation": "create",
-  "createPromptName": "customer-support-v3",
+  "createPromptName": "customer-support-agent-v2",
   "promptType": "chat",
-  "chatMessages": [...],
+  "chatMessages": [
+    {
+      "role": "system",
+      "content": "You are a helpful and empathetic customer support agent. Always be polite and professional."
+    },
+    {
+      "role": "user",
+      "content": "{{customer_question}}"
+    }
+  ],
+  "labels": "production",
+  "tags": "customer-support,chat",
   "commitMessage": "Updated response tone to be more empathetic"
 }
 ```
+
+### Example 4: MCP Server Integration
+
+Use the node as a tool in AI agent workflows with MCP Server:
+
+```json
+{
+  "tool": "langfuse",
+  "operation": "get",
+  "promptName": "{{agent_task}}-prompt",
+  "label": "production"
+}
+```
+
+The AI agent can dynamically retrieve prompts based on the task at hand.
+
+![MCP Server Integration](assets/langfuse_mcp_server.png)
 
 ## Docker Setup
 
