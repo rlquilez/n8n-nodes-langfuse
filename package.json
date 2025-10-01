@@ -1,9 +1,18 @@
 {
 	"name": "@langfuse/n8n-nodes-langfuse",
-	"version": "0.2.3",
-	"description": "Langfuse nodes for n8n",
+	"version": "0.3.0",
+	"description": "Enhanced Langfuse nodes for n8n with advanced Prompt Management features and MCP integration",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"langfuse",
+		"prompt-management",
+		"prompts",
+		"llm",
+		"ai",
+		"mcp",
+		"model-context-protocol",
+		"ai-tool",
+		"agent-tool"
 	],
 	"license": "MIT",
 	"homepage": "https://langfuse.com",
