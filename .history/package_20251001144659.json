@@ -1,7 +1,7 @@
 {
 	"name": "@langfuse/n8n-nodes-langfuse",
 	"version": "0.3.0",
-	"description": "Langfuse nodes for n8n with advanced Prompt Management features and MCP integration",
+	"description": "Enhanced Langfuse nodes for n8n with advanced Prompt Management features and MCP integration",
 	"keywords": [
 		"n8n-community-node-package",
 		"langfuse",
