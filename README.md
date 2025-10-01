@@ -42,6 +42,8 @@ Enhanced Langfuse integration for n8n with advanced Prompt Management capabiliti
 - **Bulk Operations**: Process multiple prompts efficiently
 - **Type Support**: Handle both text and chat-style prompts
 
+![Langfuse n8n Node](assets/new_n8n_langfuse_node.png)
+
 ## Installation
 
 ### Self-hosted n8n
@@ -68,6 +70,8 @@ environment:
 ## MCP Server Integration
 
 This node supports **Model Context Protocol (MCP)**, enabling AI agents to interact directly with Langfuse prompts in n8n workflows.
+
+![MCP Server Integration](assets/langfuse_mcp_server.png)
 
 ### MCP Features
 - **Tool Integration**: AI agents can use this node as a tool
